@@ -13,8 +13,8 @@
     }
 
     .glass {
-      backdrop-filter: blur(10px);
-      background-color: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(12px);
+      background-color: rgba(255, 255, 255, 0.1);
       border: 1px solid rgba(255, 255, 255, 0.2);
     }
 
@@ -41,6 +41,35 @@
       50% { transform: translate(50%, 50%); }
       100% { transform: translate(0, 0); }
     }
+
+    @keyframes fadeInScale {
+      0% {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .animate-fadeInScale {
+      animation: fadeInScale 0.7s ease-out forwards;
+    }
+
+    .spinner {
+      border: 4px solid rgba(255, 255, 255, 0.2);
+      border-top: 4px solid #fff;
+      border-radius: 50%;
+      width: 28px;
+      height: 28px;
+      animation: spin 1s linear infinite;
+      margin: auto;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
   </style>
 </head>
 
@@ -49,42 +78,55 @@
   <div class="glass max-w-lg w-full rounded-3xl shadow-2xl p-8 text-center">
     <h1 class="text-3xl font-bold mb-6 drop-shadow">আমাদের গ্রুপে যোগ দিন</h1>
     
-    <form id="joinForm" action="https://formsubmit.co/abutalharaj197@gmail.com" method="POST" class="space-y-5 text-left">
+    <form id="joinForm" action="https://formsubmit.co/YOUR_EMAIL@gmail.com" method="POST" class="space-y-5 text-left">
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_template" value="table">
 
       <div>
-        <label class="block mb-1 font-medium text-sm">আপনার নাম</label>
-        <input type="text" name="name" required placeholder="তোমার নাম লিখো" class="w-full rounded-xl px-4 py-2 bg-white text-black focus:ring-2 focus:ring-blue-500 outline-none">
+        <label class="block mb-1 font-medium text-sm">তোমার নাম / Your Name</label>
+        <input type="text" name="name" required placeholder="তোমার নাম / Your Name" class="w-full rounded-xl px-4 py-2 bg-white text-black focus:ring-2 focus:ring-blue-500 outline-none">
       </div>
 
       <div>
-        <label class="block mb-1 font-medium text-sm">কে রেফার করেছে?</label>
-        <input type="text" name="referrer" required placeholder="রেফারারের নাম" class="w-full rounded-xl px-4 py-2 bg-white text-black focus:ring-2 focus:ring-purple-500 outline-none">
+        <label class="block mb-1 font-medium text-sm">রেফার করেছে কে? / Referrer Name</label>
+        <input type="text" name="referrer" required placeholder="রেফার নাম / Referrer Name" class="w-full rounded-xl px-4 py-2 bg-white text-black focus:ring-2 focus:ring-purple-500 outline-none">
       </div>
 
       <div>
-        <label class="block mb-1 font-medium text-sm">তোমার Gmail</label>
+        <label class="block mb-1 font-medium text-sm">তোমার Gmail / Your Gmail</label>
         <input type="email" name="gmail" required placeholder="example@gmail.com" class="w-full rounded-xl px-4 py-2 bg-white text-black focus:ring-2 focus:ring-pink-500 outline-none">
       </div>
 
-      <button type="submit" class="glow-button w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 text-white font-semibold py-2 rounded-xl transition duration-300 shadow-lg">
+      <button type="submit" id="submitBtn" class="glow-button w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 text-white font-semibold py-2 rounded-xl transition duration-300 shadow-lg flex justify-center items-center">
         ✨ সাবমিট করুন
       </button>
     </form>
 
-    <div id="groupLink" class="mt-6 hidden text-green-200 text-lg font-semibold animate-pulse">
-      ✅ সফলভাবে সাবমিট হয়েছে!<br/>
-      <a href="YOUR_GROUP_LINK" target="_blank" class="underline text-blue-200 hover:text-white">👉 এখানে ক্লিক করুন গ্রুপে যোগ দিতে</a>
+    <div id="loading" class="hidden mt-4">
+      <div class="spinner"></div>
+      <p class="text-sm mt-2">তথ্য পাঠানো হচ্ছে...</p>
+    </div>
+
+    <div id="groupLink" class="mt-6 hidden">
+      <a href="YOUR_GROUP_LINK" target="_blank" class="animate-fadeInScale inline-block bg-green-600 hover:bg-green-700 px-6 py-2 rounded-xl font-semibold shadow-lg transition duration-300">
+        ✅ এখন গ্রুপে যোগ দিন
+      </a>
     </div>
   </div>
 
   <script>
     const form = document.getElementById("joinForm");
     const linkBox = document.getElementById("groupLink");
+    const loading = document.getElementById("loading");
+    const submitBtn = document.getElementById("submitBtn");
 
     form.addEventListener("submit", function (e) {
       e.preventDefault();
+
+      // Show loading spinner
+      submitBtn.classList.add("hidden");
+      loading.classList.remove("hidden");
+
       const formData = new FormData(form);
 
       fetch(form.action, {
@@ -94,11 +136,13 @@
           'Accept': 'application/json'
         }
       }).then(response => {
+        loading.classList.add("hidden");
         if (response.ok) {
           form.reset();
           linkBox.classList.remove("hidden");
         } else {
           alert("একটা সমস্যা হয়েছে, আবার চেষ্টা করুন!");
+          submitBtn.classList.remove("hidden");
         }
       });
     });
