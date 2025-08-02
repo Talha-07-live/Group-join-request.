@@ -1,154 +1,154 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Talha's Collection Joint Request</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Talha's Collection Joint Request</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
-  <style>
-    body {
-      background: linear-gradient(135deg, #3b82f6, #9333ea);
-      background-attachment: fixed;
-    }
+  <style>
+    body {
+      background: linear-gradient(135deg, #3b82f6, #9333ea);
+      background-attachment: fixed;
+    }
 
-    .glass {
-      backdrop-filter: blur(12px);
-      background-color: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-    }
+    .glass {
+      backdrop-filter: blur(12px);
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
 
-    .glow-button {
-      position: relative;
-      overflow: hidden;
-      z-index: 1;
-    }
+    .glow-button {
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
 
-    .glow-button::before {
-      content: "";
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, rgba(255,255,255,0.3), transparent 70%);
-      animation: glow 3s linear infinite;
-      z-index: -1;
-    }
+    .glow-button::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.3), transparent 70%);
+      animation: glow 3s linear infinite;
+      z-index: -1;
+    }
 
-    @keyframes glow {
-      0% { transform: translate(0, 0); }
-      50% { transform: translate(50%, 50%); }
-      100% { transform: translate(0, 0); }
-    }
+    @keyframes glow {
+      0% { transform: translate(0, 0); }
+      50% { transform: translate(50%, 50%); }
+      100% { transform: translate(0, 0); }
+    }
 
-    @keyframes fadeInScale {
-      0% {
-        opacity: 0;
-        transform: scale(0.95);
-      }
-      100% {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
+    @keyframes fadeInScale {
+      0% {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
 
-    .animate-fadeInScale {
-      animation: fadeInScale 0.7s ease-out forwards;
-    }
+    .animate-fadeInScale {
+      animation: fadeInScale 0.7s ease-out forwards;
+    }
 
-    .spinner {
-      border: 4px solid rgba(255, 255, 255, 0.2);
-      border-top: 4px solid #fff;
-      border-radius: 50%;
-      width: 28px;
-      height: 28px;
-      animation: spin 4s linear infinite;
-      margin: auto;
-    }
+    .spinner {
+      border: 4px solid rgba(255, 255, 255, 0.2);
+      border-top: 4px solid #fff;
+      border-radius: 50%;
+      width: 28px;
+      height: 28px;
+      animation: spin 4s linear infinite;
+      margin: auto;
+    }
 
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
-  </style>
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
 </head>
 
 <body class="flex items-center justify-center min-h-screen px-4 text-white">
 
-  <div class="glass max-w-lg w-full rounded-3xl shadow-2xl p-8 text-center">
-    <h1 class="text-3xl font-bold mb-6 drop-shadow">Talha's Collection Joint Request Form</h1>
-    
-    <form id="joinForm" action="https://formsubmit.co/abutalharaj197@gmail.com" method="POST" class="space-y-5 text-left">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_template" value="table">
+  <div class="glass max-w-lg w-full rounded-3xl shadow-2xl p-8 text-center">
+    <h1 class="text-3xl font-bold mb-6 drop-shadow">Talha's Collection Joint Request Form</h1>
+    
+    <form id="joinForm" action="https://formsubmit.co/abutalharaj197@gmail.com" method="POST" class="space-y-5 text-left">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
 
-      <div>
-        <label class="block mb-1 font-medium text-sm">Your Name / তোমার নাম</label>
-        <input type="text" name="name" required placeholder="Your Name / তোমার নাম" class="w-full rounded-xl px-4 py-2 bg-white text-black focus:ring-2 focus:ring-blue-500 outline-none">
-      </div>
+      <div>
+        <label class="block mb-1 font-medium text-sm">Your Name / তোমার নাম</label>
+        <input type="text" name="name" required placeholder="Your Name / তোমার নাম" class="w-full rounded-xl px-4 py-2 bg-white text-black focus:ring-2 focus:ring-blue-500 outline-none">
+      </div>
 
-      <div>
-        <label class="block mb-1 font-medium text-sm">Referrer Name / যে রেফার করেছে তার নাম</label>
-        <input type="text" name="referrer" required placeholder="Referrer Name / যে রেফার করেছে তার নাম" class="w-full rounded-xl px-4 py-2 bg-white text-black focus:ring-2 focus:ring-purple-500 outline-none">
-      </div>
+      <div>
+        <label class="block mb-1 font-medium text-sm">Referrer Name / যে রেফার করেছে তার নাম</label>
+        <input type="text" name="referrer" required placeholder="Referrer Name / যে রেফার করেছে তার নাম" class="w-full rounded-xl px-4 py-2 bg-white text-black focus:ring-2 focus:ring-purple-500 outline-none">
+      </div>
 
-      <div>
-        <label class="block mb-1 font-medium text-sm">Your Gmail / তোমার জিমেইল</label>
-        <input type="email" name="gmail" required placeholder="example@gmail.com" class="w-full rounded-xl px-4 py-2 bg-white text-black focus:ring-2 focus:ring-pink-500 outline-none">
-      </div>
+      <div>
+        <label class="block mb-1 font-medium text-sm">Your Gmail / তোমার জিমেইল</label>
+        <input type="email" name="gmail" required placeholder="example@gmail.com" class="w-full rounded-xl px-4 py-2 bg-white text-black focus:ring-2 focus:ring-pink-500 outline-none">
+      </div>
 
-      <button type="submit" id="submitBtn" class="glow-button w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 text-white font-semibold py-2 rounded-xl transition duration-300 shadow-lg flex justify-center items-center">
-        📨 Submit / সাবমিট
-      </button>
-    </form>
+      <button type="submit" id="submitBtn" class="glow-button w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 text-white font-semibold py-2 rounded-xl transition duration-300 shadow-lg flex justify-center items-center">
+        📨 Submit / সাবমিট
+      </button>
+    </form>
 
-    <div id="loading" class="hidden mt-4">
-      <div class="spinner"></div>
-      <p class="text-sm mt-2">Sending⏳... Wait For Talha's Approvel.</p>
-    </div>
+    <div id="loading" class="hidden mt-4">
+      <div class="spinner"></div>
+      <p class="text-sm mt-2">Sending⏳... Wait For Talha's Approvel.</p>
+    </div>
 
-    <div id="groupLink" class="mt-6 hidden">
-      <a href="https://m.me/j/AbbAAYXva_zYZ_0L/" target="_blank" class="animate-fadeInScale inline-block bg-green-600 hover:bg-green-700 px-6 py-2 rounded-xl font-semibold shadow-lg transition duration-300">
-        🔶Click Here To Join.🔶
-      </a>
-      <a href="https://rules.talhascollection.xo.je/" target="_blank" class="bg-yellow-500 hover:bg-yellow-600 px-6 py-2 rounded-xl font-semibold shadow-lg transition duration-300">
-        📜 Group Rules
-      </a>
-    </div>
-  </div>
+    <div id="groupLink" class="mt-6 hidden flex flex-col items-center gap-3 animate-fadeInScale">
+      <a href="https://m.me/j/AbbAAYXva_zYZ_0L/" target="_blank" class="bg-green-600 hover:bg-green-700 px-6 py-2 rounded-xl font-semibold shadow-lg transition duration-300">
+        🔶Click Here To Join.🔶
+      </a>
+      <a href="https://rules.talhascollection.xo.je/" target="_blank" class="bg-yellow-500 hover:bg-yellow-600 px-6 py-2 rounded-xl font-semibold shadow-lg transition duration-300">
+        📜 Group Rules
+      </a>
+    </div>
+  </div>
 
-  <script>
-    const form = document.getElementById("joinForm");
-    const linkBox = document.getElementById("groupLink");
-    const loading = document.getElementById("loading");
-    const submitBtn = document.getElementById("submitBtn");
+  <script>
+    const form = document.getElementById("joinForm");
+    const linkBox = document.getElementById("groupLink");
+    const loading = document.getElementById("loading");
+    const submitBtn = document.getElementById("submitBtn");
 
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
 
-      // Show loading spinner
-      submitBtn.classList.add("hidden");
-      loading.classList.remove("hidden");
+      // Show loading spinner
+      submitBtn.classList.add("hidden");
+      loading.classList.remove("hidden");
 
-      const formData = new FormData(form);
+      const formData = new FormData(form);
 
-      fetch(form.action, {
-        method: "POST",
-        body: formData,
-        headers: {
-          'Accept': 'application/json'
-        }
-      }).then(response => {
-        loading.classList.add("hidden");
-        if (response.ok) {
-          form.reset();
-          linkBox.classList.remove("hidden");
-        } else {
-          alert("something went wrong!");
-          submitBtn.classList.remove("hidden");
-        }
-      });
-    });
-  </script>
+      fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      }).then(response => {
+        loading.classList.add("hidden");
+        if (response.ok) {
+          form.reset();
+          linkBox.classList.remove("hidden");
+        } else {
+          alert("something went wrong!");
+          submitBtn.classList.remove("hidden");
+        }
+      });
+    });
+  </script>
 </body>
 </html>
